@@ -1,0 +1,17 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/menu/page": "app/admin/menu/page.js",
+  "/admin/orders/page": "app/admin/orders/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/reports/daily/page": "app/admin/reports/daily/page.js",
+  "/admin/reports/monthly/page": "app/admin/reports/monthly/page.js",
+  "/admin/reports/weekly/page": "app/admin/reports/weekly/page.js",
+  "/api/admin/orders/route": "app/api/admin/orders/route.js",
+  "/api/admin/reports/daily/route": "app/api/admin/reports/daily/route.js",
+  "/api/admin/reports/monthly/route": "app/api/admin/reports/monthly/route.js",
+  "/api/admin/reports/weekly/route": "app/api/admin/reports/weekly/route.js",
+  "/api/menu/route": "app/api/menu/route.js",
+  "/api/orders/[code]/route": "app/api/orders/[code]/route.js",
+  "/order-confirmation/[id]/page": "app/order-confirmation/[id]/page.js",
+  "/page": "app/page.js"
+}

@@ -1,0 +1,28 @@
+import { NextResponse } from 'next/server';
+import { verifySession } from '@/lib/auth';
+
+export async function GET() {
+  try {
+    const session = await verifySession();
+
+    if (!session) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      );
+    }
+
+    return NextResponse.json({
+      user: {
+        username: session.username,
+        email: session.email,
+      },
+    });
+  } catch (error) {
+    console.error('[v0] Get user error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}

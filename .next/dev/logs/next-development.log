@@ -1,0 +1,286 @@
+[00:00:06.392] Server  LOG     
+[00:00:06.403] Server  LOG        We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+[00:00:06.406] Server  LOG        The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+[00:00:06.413] Server  LOG        	- include was updated to add '.next/dev/types/**/*.ts'
+[00:00:06.417] Server  LOG     
+[00:00:06.423] Server  LOG        The following mandatory changes were made to your tsconfig.json:
+
+[00:00:06.427] Server  LOG        	- jsx was set to react-jsx (next.js uses the React automatic runtime)
+[00:00:06.437] Server  LOG     
+[00:00:06.602] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:08.030] Server  LOG      ✓ Ready in 6.2s
+[00:00:12.573] Server  LOG        Reload env: .env
+[00:00:54.368] Server  LOG        Reload env: .env
+[00:01:03.823] Server  LOG        Reload env: .env
+[00:01:15.257] Server  LOG      ○ Compiling /order-confirmation/[id] ...
+[00:01:28.341] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/order-con..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                    ...
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="geist_f15bd114-module__7725RG__variable geist_mono_6ed36146-module__KdPPOG__var..."
+-                           __processed_b7f8828d-c50f-431d-821c-9ac80470f335__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            ...
+                              <SegmentViewNode type="page" pagePath="order-conf...">
+                                <SegmentTrieNode>
+                                <ClientPageRoot Component={function OrderConfirmationPage} serverProvidedParams={{...}}>
+                                  <OrderConfirmationPage params={Promise} searchParams={Promise}>
+                                    <div
+                                      className="min-h-screen bg-background flex items-center justify-center p-4"
+-                                     bis_skin_checked="1"
+                                    >
+                  ...
+
+[00:01:32.444] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                    ...
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="geist_f15bd114-module__7725RG__variable geist_mono_6ed36146-module__KdPPOG__var..."
+-                           __processed_a4b90c2a-d2f9-4112-be52-7b8750fc521c__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            ...
+                              <TooltipProvider data-slot="tooltip-pr..." delayDuration={0}>
+                                <TooltipProviderProvider scope={undefined} isOpenDelayed={true} delayDuration={0} ...>
+                                  <div
+                                    data-slot="sidebar-wrapper"
+                                    style={{--sidebar-width:"16rem",--sidebar-width-icon:"3rem"}}
+                                    className="group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-sv..."
+-                                   bis_skin_checked="1"
+                                  >
+                                    <AppSidebar>
+                                      <Sidebar>
+                                        <div
+                                          className="group peer text-sidebar-foreground hidden md:block"
+                                          data-state="expanded"
+                                          data-collapsible=""
+                                          data-variant="sidebar"
+                                          data-side="left"
+                                          data-slot="sidebar"
+-                                         bis_skin_checked="1"
+                                        >
+                                          <div
+                                            data-slot="sidebar-gap"
+                                            className="relative w-(--sidebar-width) bg-transparent transition-[width] ..."
+-                                           bis_skin_checked="1"
+                                          >
+                                          <div
+                                            data-slot="sidebar-container"
+                                            className="fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transitio..."
+-                                           bis_skin_checked="1"
+                                          >
+                                            <div
+                                              data-sidebar="sidebar"
+                                              data-slot="sidebar-inner"
+                                              className="bg-sidebar group-data-[variant=floating]:border-sidebar-borde..."
+-                                             bis_skin_checked="1"
+                                            >
+                                              <SidebarHeader className="p-4 border-b">
+                                                <div
+                                                  data-slot="sidebar-header"
+                                                  data-sidebar="header"
+                                                  className="flex flex-col gap-2 p-4 border-b"
+-                                                 bis_skin_checked="1"
+                                                >
+                                                  <div
+                                                    className="flex items-center gap-2 font-bold text-xl text-primary"
+-                                                   bis_skin_checked="1"
+                                                  >
+                                              <SidebarContent>
+                                                <div
+                                                  data-slot="sidebar-content"
+                                                  data-sidebar="content"
+                                                  className="flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-da..."
+-                                                 bis_skin_checked="1"
+                                                >
+                                                  <SidebarGroup>
+                                                    <div
+                                                      data-slot="sidebar-group"
+                                                      data-sidebar="group"
+                                                      className="relative flex w-full min-w-0 flex-col p-2"
+-                                                     bis_skin_checked="1"
+                                                    >
+                                                      <SidebarGroupLabel>
+                                                        <div
+                                                          data-slot="sidebar-group-label"
+                                                          data-sidebar="group-label"
+                                                          className={"text-sidebar-foreground/70 ring-sidebar-ring fl..."}
+-                                                         bis_skin_checked="1"
+                                                        >
++                                                         Management
+                                                      <SidebarGroupContent>
+                                                        <div
+                                                          data-slot="sidebar-group-content"
+                                                          data-sidebar="group-content"
+                                                          className="w-full text-sm"
+-                                                         bis_skin_checked="1"
+                                                        >
+                                                  <SidebarGroup>
+                                                    <div
+                                                      data-slot="sidebar-group"
+                                                      data-sidebar="group"
+                                                      className="relative flex w-full min-w-0 flex-col p-2"
+-                                                     bis_skin_checked="1"
+                                                    >
+                                                      <SidebarGroupLabel>
+                                                        <div
+                                                          data-slot="sidebar-group-label"
+                                                          data-sidebar="group-label"
+                                                          className={"text-sidebar-foreground/70 ring-sidebar-ring fl..."}
+-                                                         bis_skin_checked="1"
+                                                        >
++                                                         Reports
+                                                      <SidebarGroupContent>
+                                                        <div
+                                                          data-slot="sidebar-group-content"
+                                                          data-sidebar="group-content"
+                                                          className="w-full text-sm"
+-                                                         bis_skin_checked="1"
+                                                        >
+                                              <div
+                                                className="mt-auto p-4 border-t"
+-                                               bis_skin_checked="1"
+                                              >
+                                    <main className="flex flex-...">
+                                      <AdminHeader username="admin">
+                                        <div
+                                          className="p-4 border-b flex items-center justify-between"
+-                                         bis_skin_checked="1"
+                                        >
+                                          <div
+                                            className="flex items-center gap-4"
+-                                           bis_skin_checked="1"
+                                          >
+                                          <div
+                                            className="flex items-center gap-4"
+-                                           bis_skin_checked="1"
+                                          >
+                                      <div
+                                        className="flex-1 overflow-y-auto p-4 md:p-6 bg-muted/10"
+-                                       bis_skin_checked="1"
+                                      >
+                                        ...
+                                          <SegmentViewNode type="page" pagePath="admin/page...">
+                                            <SegmentTrieNode>
+                                            <ClientPageRoot Component={function AdminDashboard} ...>
+                                              <AdminDashboard params={Promise} searchParams={Promise}>
+                                                <div
+                                                  className="p-8 text-center"
+-                                                 bis_skin_checked="1"
+                                                >
++                                                 Loading dashboard...
+                  ...
+
+[00:01:35.942] Server  LOG      ○ Compiling /admin/reports/daily ...
+[00:10:19.593] Server  LOG      ○ Compiling /admin/menu ...
+[00:10:30.314] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin/rep..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" suppressHydrationWarning={true}>
+                          <body
+                            className="geist_f15bd114-module__7725RG__variable geist_mono_6ed36146-module__KdPPOG__var..."
+-                           __processed_45d031e6-1e3e-4fe3-ae24-12e667bc97dd__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+
+[00:12:13.035] Server  LOG      ✓ Compiled in 227ms
+[00:12:15.177] Server  LOG      ✓ Compiled in 226ms
+[00:12:25.542] Server  LOG      ✓ Compiled in 227ms
+[00:12:53.783] Server  LOG      ✓ Compiled in 198ms
