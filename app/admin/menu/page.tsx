@@ -19,15 +19,17 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Switch } from "@/components/ui/switch"
 import { Badge } from "@/components/ui/badge"
-import { Pencil, Trash2, Plus } from "lucide-react"
+import { Pencil, Trash2, Plus, Upload, X } from "lucide-react"
 import type { MenuItem } from "@/lib/types"
 import { useToast } from "@/hooks/use-toast"
+import Image from "next/image"
 
 export default function MenuManagementPage() {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [editingItem, setEditingItem] = useState<MenuItem | null>(null)
+  const [isUploadingImage, setIsUploadingImage] = useState(false)
   const { toast } = useToast()
 
   const [formData, setFormData] = useState({
@@ -110,6 +112,43 @@ export default function MenuManagementPage() {
       })
     }
     setIsDialogOpen(true)
+  }
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    setIsUploadingImage(true)
+    try {
+      const formDataToUpload = new FormData()
+      formDataToUpload.append("file", file)
+
+      const response = await fetch("/api/upload/menu-image", {
+        method: "POST",
+        body: formDataToUpload,
+      })
+
+      if (!response.ok) {
+        const error = await response.json()
+        throw new Error(error.error || "Failed to upload image")
+      }
+
+      const data = await response.json()
+      setFormData({ ...formData, image: data.imagePath })
+      toast({
+        title: "Success",
+        description: "Image uploaded successfully",
+      })
+    } catch (error) {
+      console.error("[v0] Upload image error:", error)
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "Failed to upload image",
+        variant: "destructive",
+      })
+    } finally {
+      setIsUploadingImage(false)
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -230,6 +269,16 @@ export default function MenuManagementPage() {
               </div>
             </CardHeader>
             <CardContent className="space-y-4">
+              {item.image && (
+                <div className="relative w-full h-32 bg-muted rounded-lg overflow-hidden">
+                  <Image
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
               <p className="text-sm text-muted-foreground line-clamp-2">{item.description}</p>
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold">Rp {item.price.toLocaleString()}</p>
@@ -308,13 +357,52 @@ export default function MenuManagementPage() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="image">Image URL</Label>
-              <Input
-                id="image"
-                value={formData.image}
-                onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                placeholder="/placeholder.svg?height=200&width=200"
-              />
+              <Label>Menu Image</Label>
+              <div className="space-y-3">
+                {formData.image && (
+                  <div className="relative w-full h-40 bg-muted rounded-lg overflow-hidden">
+                    <Image
+                      src={formData.image || "/placeholder.svg"}
+                      alt="Menu item preview"
+                      fill
+                      className="object-cover"
+                    />
+                    <Button
+                      type="button"
+                      variant="destructive"
+                      size="icon"
+                      className="absolute top-2 right-2"
+                      onClick={() => setFormData({ ...formData, image: "" })}
+                    >
+                      <X className="w-4 h-4" />
+                    </Button>
+                  </div>
+                )}
+                <div className="flex gap-2">
+                  <label className="flex-1">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      disabled={isUploadingImage}
+                      className="hidden"
+                    />
+                    <Button
+                      type="button"
+                      variant="outline"
+                      className="w-full gap-2 cursor-pointer bg-transparent"
+                      disabled={isUploadingImage}
+                      asChild
+                    >
+                      <span>
+                        <Upload className="w-4 h-4" />
+                        {isUploadingImage ? "Uploading..." : "Upload Image"}
+                      </span>
+                    </Button>
+                  </label>
+                </div>
+                <p className="text-xs text-muted-foreground">JPG, PNG, WebP, atau GIF (Max 5MB)</p>
+              </div>
             </div>
 
             <div className="flex items-center gap-2">
