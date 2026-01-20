@@ -3,7 +3,7 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
-  category: "coffee" | "non-coffee" | "snacks" | "meals";
+  category: 'Kopi' | 'Non-Kopi' | 'Cemilan' | 'Makanan';
   image: string;
   available: boolean;
 }
@@ -18,9 +18,9 @@ export interface Order {
   tableNumber: string;
   items: CartItem[];
   total: number;
-  status: "pending" | "preparing" | "ready" | "completed" | "cancelled";
+  status: 'Tertunda' | 'Persiapan' | 'Siap' | 'Telah Selesai' | 'Dibatalkan';
   createdAt: string;
-  paymentMethod: "cash" | "qris";
+  paymentMethod: 'cash';
 }
 
-export type OrderStatus = Order["status"];
+export type OrderStatus = Order['status'];
